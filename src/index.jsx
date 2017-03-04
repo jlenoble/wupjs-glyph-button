@@ -1,5 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
-import WupjsGlyphButton from './wupjs-glyph-button';
+import GlyphButton from './glyph-button';
 
-render(<WupjsGlyphButton/>, document.getElementById('app'));
+render(<GlyphButton
+  glyph="save"
+  onClick={() => {
+    console.log('Hello!');
+  }}
+/>, document.getElementById('app'));
