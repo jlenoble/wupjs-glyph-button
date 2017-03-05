@@ -1,6 +1,16 @@
 # wupjs-glyph-button
 Generic button using React
 
+## Content
+
+* [Usage](#usage)
+* [Required properties](#required-properties)
+  * [glyph](#glyph)
+  * [onClick](#onclick)
+* [Theming GlyphButton](#theming-glyphbutton)
+* [Overriding GlyphButton defaults](#overriding-glyphbutton-defaults)
+* [GlyphButtonGroup](#glyphbuttongroup)
+
 ## Usage
 
 A glyph button is a purely representational React component. It has as text a single symbol character. By default, we use [Bootstrap 4](http://getbootstrap.com/) and [Font Awesome](http://fontawesome.io/) classes to theme the component. But these settings can be overridden.
@@ -31,11 +41,11 @@ By default, ```glyph``` is the name of a character as defined by [Font Awesome](
 
 ```onClick``` property must be a function which will be called whenever the button is clicked. As the component is purely representational, the function knows nothing of its state or props. Therefore it must be bound upstream by the parent of the component.
 
-## Theming the component
+## Theming GlyphButton
 
 There are two props provided to help theme the component: ```buttonAddClass``` and ```glyphAddClass```. The first one helps with the placement, sizing, etc. of the underlying button HTML tag. The second one helps theme the symbol within the button. But they come on top of the Bootstrap and Font Awesome defaults. See below to override them.
 
-## Overriding defaults
+## Overriding GlyphButton defaults
 
 To override Bootstrap classes, use property ```buttonBaseClass```.
 
@@ -73,6 +83,40 @@ render(<div>
   />
 </div>, document.getElementById('app'));
 ```
+
+## GlyphButtonGroup
+
+This React component helps deal with several buttons in association, that is they should be displayed together and share a common theme.
+
+```js
+import React from 'react';
+import {render} from 'react-dom';
+import GlyphButtonGroup from './glyph-button-group';
+
+render(<div>
+  <h5>GlyphButtonGroup</h5>
+  <GlyphButtonGroup
+    glyphs={['pencil', 'trash-o', 'save']}
+    onClicks={{
+      'pencil': () => {
+        console.log('pencil button clicked');
+      },
+      'trash-o': () => {
+        console.log('trash-o button clicked');
+      },
+      'save': () =>{
+        console.log('save button clicked');
+      },
+    }}
+  />
+</div>, document.getElementById('app'));
+```
+
+GlyphButtonGroup has the same properties as GlyphButton, but with the plural mark (`s` appended, yielding ```glyphs```, ```onClicks```, ```buttonBaseClasses```, ```buttonAddClasses```, ```glyphBaseClasses```, ```glyphAddClasses```).
+
+```glyphs``` is an array of strings, the five others are objects mapping to the strings in ```glyphs```.
+
+Moreover two props are provided to theme the group itself: ```buttonGroupBaseClass``` and ```buttonGroupAddClass```.
 
 ## License
 
