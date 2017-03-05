@@ -98,7 +98,7 @@ describe('Testing <GlyphButton/>', function () {
 
     expect(i).not.to.have.className('fa');
     expect(i).not.to.have.className('fa-pencil');
-    expect(i).to.have.className('glyph-replaced');
+    expect(i).to.have.className('glyph-replaced-pencil');
     expect(i).to.have.className('glyph-added');
   });
 

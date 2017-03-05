@@ -122,10 +122,10 @@ describe('Testing <GlyphButtonGroup/>', function () {
     expect(wrapper).not.to.have.className('btn-group');
 
     expect(wrapper.html()).to.match(
-      /<button class="pencil-button-class-replaced pencil-button-class-added"><i class="pencil-glyph-class-replaced pencil-glyph-class-added"><\/i><\/button>/
+      /<button class="pencil-button-class-replaced pencil-button-class-added"><i class="pencil-glyph-class-replaced-pencil pencil-glyph-class-added"><\/i><\/button>/
     );
     expect(wrapper.html()).to.match(
-      /<button class="save-button-class-replaced save-button-class-added"><i class="save-glyph-class-replaced save-glyph-class-added"><\/i><\/button>/
+      /<button class="save-button-class-replaced save-button-class-added"><i class="save-glyph-class-replaced-save save-glyph-class-added"><\/i><\/button>/
     );
   });
 

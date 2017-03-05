@@ -5,7 +5,8 @@ const GlyphButton = ({
   glyph, onClick, buttonBaseClass, buttonAddClass,
   glyphBaseClass, glyphAddClass,
 }) => {
-  const _glyphBaseClass = glyphBaseClass || `fa fa-${glyph}`;
+  const _glyphBaseClass = (glyphBaseClass && (glyphBaseClass + '-' + glyph)) ||
+    `fa fa-${glyph}`;
 
   return (
     <button
