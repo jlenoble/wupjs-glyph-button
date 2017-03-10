@@ -33,23 +33,23 @@ render(<div>
 
 ## Required properties
 
-### ```glyph```
+### `glyph`
 
-By default, ```glyph``` is the name of a character as defined by [Font Awesome](http://fontawesome.io/icons/). You could use it in combination with property ```glyphBaseClass``` to use a totally different character set, but that may be a lot of work. See [Overriding defaults](#overriding-defaults).
+By default, `glyph` is the name of a character as defined by [Font Awesome](http://fontawesome.io/icons/). You could use it in combination with property `glyphBaseClass` to use a totally different character set, but that may be a lot of work. See [Overriding GlyphButton defaults](#overriding-glyphbutton-defaults).
 
-### ```onClick```
+### `onClick`
 
-```onClick``` property must be a function which will be called whenever the button is clicked. As the component is purely representational, the function knows nothing of its state or props. Therefore it must be bound upstream by the parent of the component.
+`onClick` property must be a function which will be called whenever the button is clicked. As the component is purely representational, the function knows nothing of its state or props. Therefore it must be bound upstream by the parent of the component.
 
 ## Theming GlyphButton
 
-There are two props provided to help theme the component: ```buttonAddClass``` and ```glyphAddClass```. The first one helps with the placement, sizing, etc. of the underlying button HTML tag. The second one helps theme the symbol within the button. But they come on top of the Bootstrap and Font Awesome defaults. See below to override them.
+There are two props provided to help theme the component: `buttonAddClass` and `glyphAddClass`. The first one helps with the placement, sizing, etc. of the underlying button HTML tag. The second one helps theme the symbol within the button. But they come on top of the Bootstrap and Font Awesome defaults. See below to override them.
 
 ## Overriding GlyphButton defaults
 
-To override Bootstrap classes, use property ```buttonBaseClass```.
+To override Bootstrap classes, use property `buttonBaseClass`.
 
-To change the fonts, you have to use ```glyphBaseClass```. By default, the classes used to theme them are formed by concatenating the string ```"fa fa-"``` with the value of the ```glyph``` prop. This works well with the CSS of Font Awesome. Now you can use your own CSS and own naming scheme.
+To change the fonts, you have to use `glyphBaseClass`. By default, the classes used to theme them are formed by concatenating the string `"fa fa-"` with the value of the `glyph` prop. This works well with the CSS of Font Awesome. Now you can use your own CSS and own naming scheme.
 
 ```css
 .my-question-mark::before {
@@ -112,11 +112,11 @@ render(<div>
 </div>, document.getElementById('app'));
 ```
 
-GlyphButtonGroup has the same properties as GlyphButton, but with the plural mark (`s` appended, yielding ```glyphs```, ```onClicks```, ```buttonBaseClasses```, ```buttonAddClasses```, ```glyphBaseClasses```, ```glyphAddClasses```).
+GlyphButtonGroup has the same properties as GlyphButton, but with the plural mark (`s` appended, yielding `glyphs`, `onClicks`, `buttonBaseClasses`, `buttonAddClasses`, `glyphBaseClasses`, `glyphAddClasses`).
 
-```glyphs``` is an array of strings, the five others are objects mapping to the strings in ```glyphs```.
+`glyphs` is an array of strings, the five others are objects mapping to the strings in `glyphs`.
 
-Moreover two props are provided to theme the group itself: ```buttonGroupBaseClass``` and ```buttonGroupAddClass```.
+Moreover two props are provided to theme the group itself: `buttonGroupBaseClass` and `buttonGroupAddClass`.
 
 ## License
 
