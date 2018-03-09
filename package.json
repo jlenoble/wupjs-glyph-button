@@ -1,6 +1,6 @@
 {
   "name": "wupjs-glyph-button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generic button using React",
   "main": "lib/index.js",
   "scripts": {
