@@ -1,28 +1,36 @@
 import React from 'react';
 import {shallow, render, mount} from 'enzyme';
 import {expect} from 'chai';
+import dom from 'jsdom-global';
 import GlyphButtonGroup from '../src/glyph-button-group';
 
 describe('Testing <GlyphButtonGroup/>', function () {
-  it(`<GlyphButtonGroup/> can't be instantiated w/o props glyphs/onClicks`,
-  function () {
-    expect(shallow.bind(undefined, <GlyphButtonGroup/>)).to.throw(
-      'undefined is not an object');
+  beforeEach(function () {
+    this.cleanup = dom(); // eslint-disable-line no-invalid-this
   });
 
-  it(`<GlyphButtonGroup/> can be instantiated with props glyphs/onClicks`,
-  function () {
-    shallow(
-      <GlyphButtonGroup
-        glyphs={['pencil']}
-        onClicks={{
-          pencil: () => {
-            console.log('pencil button clicked');
-          },
-        }}
-      />
-    );
+  afterEach(function () {
+    this.cleanup(); // eslint-disable-line no-invalid-this
   });
+
+  it(`<GlyphButtonGroup/> can't be instantiated w/o props glyphs/onClicks`,
+    function () {
+      expect(shallow.bind(undefined, <GlyphButtonGroup/>)).to.throw();
+    });
+
+  it(`<GlyphButtonGroup/> can be instantiated with props glyphs/onClicks`,
+    function () {
+      shallow(
+        <GlyphButtonGroup
+          glyphs={['pencil']}
+          onClicks={{
+            pencil: () => {
+              console.log('pencil button clicked');
+            },
+          }}
+        />
+      );
+    });
 
   it(`<GlyphButtonGroup/> contains buttons and glyphs`, function () {
     const wrapper = render(
@@ -83,8 +91,8 @@ describe('Testing <GlyphButtonGroup/>', function () {
     );
   });
 
-  it(`<GlyphButtonGroup/>'s default class names can be overridden`,
-  function () {
+  // eslint-disable-next-line max-len
+  it(`<GlyphButtonGroup/>'s default class names can be overridden`, function () {
     const wrapper = shallow(
       <GlyphButtonGroup
         glyphs={['pencil', 'save']}
