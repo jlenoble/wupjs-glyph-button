@@ -5,6 +5,8 @@ import dom from 'jsdom-global';
 import GlyphButtonGroup from '../src/glyph-button-group';
 
 describe('Testing <GlyphButtonGroup/>', function () {
+  this.timeout(5000); // eslint-disable-line no-invalid-this
+
   beforeEach(function () {
     this.cleanup = dom(); // eslint-disable-line no-invalid-this
   });
